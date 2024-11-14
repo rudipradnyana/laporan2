@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Teori</title>
+    <style>
+       
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #5a3921; 
+        }
+        h1 {
+            text-align: center;
+            padding: 20px;
+            background-color: #dcd2b3;
+        }
+        h2 {
+            text-align: center;
+            margin-top: 0;
+            padding: 10px;
+            background-color: #c9b79d;
+        }
+        section {
+            margin: 20px;
+        }
+        .content {
+            display: block;
+            margin-top: 10px;
+        }
+
+        
+        .messy {
+            background-color: #4a2a2a;
+            color: #ffcc00;
+        }
+        .messy h1, .messy h2, .messy h3 {
+            color: #ff5733;
+        }
+
+        
+.messy {
+    background-color: #4a2a2a;
+    color: #ffcc00;
+}
+
+.messy h1{
+    color: #ff5733;
+    font-size: 2em; 
+    transform: rotate(-10deg);
+}
+
+.messy h2{
+    color: #164ae9;
+    font-size: 2em; 
+    transform: rotate(+30deg);
+}
+.messy h3{
+    color: #812713;
+    font-size: 2em; 
+    transform: rotate(-20deg);
+}
+
+.messy section {
+    margin: 40px 20px 0 50px; 
+    transform: rotate(3deg); 
+
+.messy .content {
+    font-size: 1.2em; 
+    line-height: 1.4em;
+    position: relative;
+    top: 10px;
+    left: 15px;
+    transform: rotate(-2deg); 
+    background-color: rgba(255, 255, 255, 0.1); 
+    padding: 5px;
+    margin-bottom: 30px;
+}
+
+.messy p {
+    margin-left: 20px; 
+    font-size: 1em; 
+}
+
+.messy .switch-button {
+    background-color: #8a3b1a; 
+    transform: scale(1.1); 
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3); 
+    color: #333333;
+}
+        
+        .switch-button {
+            display: block;
+            margin: 20px;
+            padding: 10px 20px;
+            background-color: #5a3921;
+            color: white;
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>LAPORAN TEORI</h1>
+    <h2>I GEDE RUDI PRADNYANA | 202331118</h2>
+    
+   
+    <div class="switch-button" onclick="toggleMode()">Berpindah Mode Tampilan</div>
+    
+    <section>
+        <h3 id="section1">Mengapa menggunakan HTML, CSS, dan JavaScript dalam pemrograman web?</h3>
+        <div id="content1" class="content">
+            <p>• <em>HTML</em> berfungsi sebagai kerangka utama dari sebuah halaman web. <em>HTML</em> sendiri memberikan struktur dasar dengan menandai elemen-elemen seperti judul, paragraf, tautan, gambar, dan tabel. Tanpa <em>HTML</em>, konten atau isi yang ada di web tersebut tidak bisa ditampilkan dalam bentuk yang terstruktur dan mudah dibaca. Jadi <em>HTML</em> merupakan standar dasar yang wajib dalam setiap halaman web yang memungkinkan browser untuk membaca dan menampilkan isi web dengan benar. </p>
+        
+            <p>• <em>CSS</em> digunakan untuk mengatur tampilan visual dari suatu halaman web. Dengan menggunakan <em>CSS</em>, developer dapat mengontrol tata letak, warna, ukuran font, dan elemen-elemen yang berkaitan dengan estetika lainnya. <em>CSS</em> memungkinkan pemisahan antara konten (<em>HTML</em>) dan gaya, yang tidak hanya membuat kode lebih terstruktur tetapi juga mempermudah pengelolaan desain di seluruh halaman. <em>CSS</em> juga mendukung responsive web design yang memungkinkan halaman web menyesuaikan tampilan pada berbagai perangkat seperti ponsel, tablet, dan komputer.</p>
+
+            <p>• <em>JavaScript</em> menambahkan elemen interaktivitas pada halaman web. Dengan menggunakan <em>JavaScript</em>, developer dapat membuat fitur dinamis, seperti formulir yang bisa memvalidasi otomatis, efek animasi, menu yang interaktif, hingga pemrosesan data tanpa perlu memuat ulang halaman. <em>JavaScript</em> adalah bahasa pemrograman sisi klien yang berjalan langsung di browser, memungkinkan pengalaman yang lebih cepat dan responsif bagi pengguna.</p>
+            <hr>
+        </div>
+    </section>
+
+    <section>
+        <h3 id="section2">Integrasi HTML, CSS, dan JavaScript dalam pemrograman web</h3>
+        <div id="content2" class="content">
+            <p>• Dalam pengembangan web, <em>HTML</em>, <em>CSS</em>, dan <em>JavaScript</em> bekerja dengan saling melengkapi untuk menciptakan halaman yang fungsional (berjalan sesuai dengan fungsinya) dan menarik dalam waktu yang bersamaan. <em>HTML</em> berfungsi sebagai kerangka atau fondasi. <em>CSS</em> diterapkan untuk mengatur gaya, biasanya dengan menautkan file <em>CSS</em> eksternal pada file <em>HTML</em> menggunakan elemen <em>link</em>. Sedangkan <em>JavaScript</em> bisa diintegrasikan melalui elemen <em>script</em> atau dengan menautkan file <em>JavaScript</em> eksternal untuk menambahkan logika interaktif. Dari ketiga itu terbentuklah sebuah website yang dinamis, interaktif, dan mudah diakses pengguna dari berbagai perangkat. </p>
+            <hr>
+        </div>
+    </section>
+
+    <script>
+        
+        document.querySelectorAll('h3').forEach(function (header) {
+            header.addEventListener('click', function () {
+                var contentId = "content" + this.id.slice(-1);
+                var content = document.getElementById(contentId);
+                var action = confirm("Apakah Anda ingin menyembunyikan konten ini?");
+                if (action) {
+                    content.style.display = content.style.display === 'none' ? 'block' : 'none';
+                }
+            });
+        });
+
+        
+        function toggleMode() {
+            var body = document.body;
+            body.classList.toggle("messy"); 
+        }
+    </script>
+</body>
+</html>
